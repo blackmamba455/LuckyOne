@@ -9,6 +9,51 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_login" tools:context=".LoginActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txt_username"
+        android:layout_below="@+id/txtv_username"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/txt_password"
+        android:layout_below="@+id/txtv_password"
+        android:layout_alignLeft="@+id/txtv_password"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/btn_login"
+        android:layout_below="@+id/txt_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="81dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Username"
+        android:id="@+id/txtv_username"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/txt_username"
+        android:layout_marginTop="90dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Password"
+        android:id="@+id/txtv_password"
+        android:layout_below="@+id/txt_username"
+        android:layout_alignRight="@+id/txtv_username"
+        android:layout_marginTop="20dp" />
 </RelativeLayout>
