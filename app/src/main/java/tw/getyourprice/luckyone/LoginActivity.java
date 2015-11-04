@@ -10,6 +10,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 public class LoginActivity extends AppCompatActivity  {
 
@@ -19,13 +27,33 @@ public class LoginActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_login);
 
         Button btn_login = (Button) findViewById(R.id.btn_login);
+       final TextView mTextView = (TextView) findViewById(R.id.txtv_status);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d("Tag", "Loginn");
             }
         });
+//       ------------   Test Request Queue  ------------------------
+        RequestQueue qu = Volley.newRequestQueue(this);
+        String url ="http://www.google.com";
 
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        mTextView.setText("Response is: "+ response.substring(0,500));
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                mTextView.setText("That didn't work!");
+            }
+        });
+        // Add the request to the RequestQueue.
+        qu.add(stringRequest);
     }
 
     @Override

@@ -11,3 +11,5 @@ git clone https://android.googlesource.com/platform/frameworks/volley
    In dependencies block add a line compile project(':Volley')
 Go to Build menu -> Rebuild Project
 You are done importing Android Volley to you project.
+
+4. In rules.gradle die sdk compile version ggf. anpassen

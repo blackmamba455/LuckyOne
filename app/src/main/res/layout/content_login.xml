@@ -58,4 +58,13 @@
         android:layout_below="@+id/txt_username"
         android:layout_alignRight="@+id/txtv_username"
         android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login status"
+        android:id="@+id/txtv_status"
+        android:layout_below="@+id/btn_login"
+        android:layout_alignLeft="@+id/btn_login"
+        android:layout_marginTop="56dp" />
 </RelativeLayout>
