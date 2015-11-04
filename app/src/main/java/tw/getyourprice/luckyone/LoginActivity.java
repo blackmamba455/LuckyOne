@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity  {
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.d("Tag", "Login");
+                Log.d("Tag", "Loginn");
             }
         });
 
