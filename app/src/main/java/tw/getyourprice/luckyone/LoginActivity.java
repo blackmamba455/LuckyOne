@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity  {
                 Log.d("Tag", "Loginn");
             }
         });
-//       ------------   Test Request Queue  ------------------------
+//       ------------   Test Request Queue  -------------------------
         RequestQueue qu = Volley.newRequestQueue(this);
         String url ="http://www.google.com";
 
