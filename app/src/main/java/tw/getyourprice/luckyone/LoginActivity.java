@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity  {
         });
 //       ------------   Test Request Queue  -------------------------
         RequestQueue qu = Volley.newRequestQueue(this);
-        String url ="http://192.168.2.102";
+        String url ="http://192.168.2.102/gluecksrad_app/party_1.php/?data=hallo";
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
