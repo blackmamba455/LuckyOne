@@ -5,7 +5,7 @@
 	header("Content-Type:application/json");
 // ******* empfangen von http request *******
 
-	if(!empty($_GET['data'])){
+	if(!empty($_GET['data'])){											//TODO: empfangenes JSON packet auswerten... pwassword und username
 		$d=$_GET['data'];
 	
 		if (empty($_GET['data'])){
