@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity  {
         }
 
         RequestQueue qu = Volley.newRequestQueue(this);
-        String url ="http://192.168.2.102/gluecksrad_app/party_1.php/?data=helloFromAndroid";
+        String url ="http://192.168.2.102/gluecksrad_app/party_1.php/?data=" + body;
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,

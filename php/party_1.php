@@ -3,17 +3,17 @@
 	echo "app is starting...\n";
 
 	header("Content-Type:application/json");
-	//$http = new HTTPResponse();
 // ******* empfangen von http request *******
 
 	if(!empty($_GET['data'])){
-		$data=$_GET['data'];
+		$d=$_GET['data'];
 	
 		if (empty($_GET['data'])){
-			deliver_response(400, "error", NULL);
+			//deliver_response(400, "error", NULL);
 		}
 		else{
-			deliver_response(200, "all right", $data);
+			echo $d;
+			//deliver_response(200, "all right", $data);
 		}
 	}
 	
