@@ -19,7 +19,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class LoginActivity extends AppCompatActivity  {
+
+    final JSONObject body = new JSONObject();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,14 @@ public class LoginActivity extends AppCompatActivity  {
             }
         });
 //       ------------   Test Request Queue  -------------------------
+
+        try {
+            body.put("username", "thomas");
+            body.put("password", "1234");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         RequestQueue qu = Volley.newRequestQueue(this);
         String url ="http://192.168.2.102/gluecksrad_app/party_1.php/?data=helloFromAndroid";
 
@@ -43,8 +57,7 @@ public class LoginActivity extends AppCompatActivity  {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        mTextView.setText("Response is: "+ response.substring(0,500));
+                        mTextView.setText(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
