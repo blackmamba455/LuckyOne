@@ -25,6 +25,7 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity  {
 
+    private String status;
     private static Context context;
     private String url = "http://192.168.2.102/gluecksrad_app/party_1.php/?data=";
     final JSONObject body = new JSONObject();
@@ -56,8 +57,18 @@ public class LoginActivity extends AppCompatActivity  {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        String answer = httpCommu.sendMessage(body);
-        mTextView.setText(answer);
+
+        httpCommu.sendMessage(body, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                mTextView.setText(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                mTextView.setText("error");
+            }
+        });
 
     }
 

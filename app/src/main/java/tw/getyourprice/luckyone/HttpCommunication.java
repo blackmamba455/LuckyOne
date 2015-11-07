@@ -23,36 +23,24 @@ public class HttpCommunication {
     }
 
     private String url;
-    public String output = "1111111";
-
-
-
 
     RequestQueue qu = Volley.newRequestQueue(LoginActivity.getAppContext());
 
 
-     public String sendMessage(JSONObject jasonBody){
+     public void sendMessage(JSONObject jasonBody, Response.Listener<String> rl,Response.ErrorListener errorl){
 
          String absoluteURL = url +  jasonBody;
          // Request a string response from the provided URL.
-         StringRequest stringRequest = new StringRequest(Request.Method.GET, absoluteURL,
-                 new Response.Listener<String>() {
-                     @Override
-                     public void onResponse(String response) {
-                         output = response;
-                         Log.i("info", output);                                             //TODO speichert wert nicht in output variable!!!???
-                     }
-                 }, new Response.ErrorListener() {
-             @Override
-             public void onErrorResponse(VolleyError error) {
-                 output = "That didn't work!";
-             }
-         });
+         StringRequest stringRequest = new StringRequest(Request.Method.GET, absoluteURL, rl, errorl);
          // Add the request to the RequestQueue.
          qu.add(stringRequest);
 
-         return output;
      }
+
+
+
+
+
 
 
 }
